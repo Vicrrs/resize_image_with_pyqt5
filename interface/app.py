@@ -9,6 +9,7 @@ class App(QMainWindow, Ui_MainWindow):
         super().__init__(parent)
         super().setupUi(self)
         self.botaoEscolheArquivo.clicked.connect(self.escolher_imagem)
+        self.botaoRedimensionar.clicked.connect(self.redimensionar)
 
     def escolher_imagem(self):
         imagem, _ = QFileDialog.getSaveFileName(self.centralwidget, 'Escolher Imagem',
@@ -17,6 +18,15 @@ class App(QMainWindow, Ui_MainWindow):
         self.inputAbrirArquivo.setText(imagem)
         self.original_img = QPixmap(imagem)
         self.labelImg.setPixmap(self.original_img)
+        self.inputLargura.setText(str(self.original_img.width()))
+        self.inputAltura.setText(str(self.original_img.height()))
+
+    def redimensionar(self):
+        largura = int(self.inputLargura.text())
+        self.nova_imagem = self.original_img.scaledToWidth(largura)
+        self.labelImg.setPixmap(self.nova_imagem)
+        self.inputLargura.setText(str(self.nova_imagem.width()))
+        self.inputAltura.setText(str(self.nova_imagem.height()))
 
 
 if __name__ == '__main__':
