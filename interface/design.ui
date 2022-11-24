@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>639</width>
-    <height>627</height>
+    <width>784</width>
+    <height>686</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,17 +15,41 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QLineEdit" name="inputAbrirArquivo"/>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="inputLargura"/>
     </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="botaoEscolheArquivo">
+    <item row="2" column="0">
+     <widget class="QLabel" name="label">
       <property name="text">
-       <string>Escolher Imagem</string>
+       <string>largura</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="2">
+    <item row="2" column="3">
+     <widget class="QLineEdit" name="inputAltura"/>
+    </item>
+    <item row="2" column="4">
+     <widget class="QPushButton" name="botaoRedimensionar">
+      <property name="text">
+       <string>Redimensionar</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>altura</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4">
+     <widget class="QPushButton" name="botaoSalvar">
+      <property name="text">
+       <string>Salvar</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="5">
      <widget class="QScrollArea" name="scrollArea">
       <property name="widgetResizable">
        <bool>true</bool>
@@ -35,8 +59,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>619</width>
-         <height>578</height>
+         <width>764</width>
+         <height>579</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
@@ -50,6 +74,16 @@
        </layout>
       </widget>
      </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QPushButton" name="botaoEscolheArquivo">
+      <property name="text">
+       <string>Escolher Imagem</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="4">
+     <widget class="QLineEdit" name="inputAbrirArquivo"/>
     </item>
    </layout>
   </widget>
