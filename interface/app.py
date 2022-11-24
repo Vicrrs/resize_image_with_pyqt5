@@ -16,6 +16,7 @@ class App(QMainWindow, Ui_MainWindow):
                                                 options=QFileDialog.DontUseNativeDialog)
         self.inputAbrirArquivo.setText(imagem)
         self.original_img = QPixmap(imagem)
+        self.labelImg.setPixmap(self.original_img)
 
 
 if __name__ == '__main__':
