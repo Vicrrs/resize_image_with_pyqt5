@@ -10,9 +10,10 @@ class App(QMainWindow, Ui_MainWindow):
         super().setupUi(self)
         self.botaoEscolheArquivo.clicked.connect(self.escolher_imagem)
         self.botaoRedimensionar.clicked.connect(self.redimensionar)
+        self.botaoSalvar.clicked.connect(self.salvar)
 
     def escolher_imagem(self):
-        imagem, _ = QFileDialog.getSaveFileName(self.centralwidget, 'Escolher Imagem',
+        imagem, _ = QFileDialog.getOpenFileName(self.centralwidget, 'Escolher Imagem',
                                                 'C:\\Users\\rozas\\OneDrive\\Imagens\\',
                                                 options=QFileDialog.DontUseNativeDialog)
         self.inputAbrirArquivo.setText(imagem)
@@ -27,6 +28,12 @@ class App(QMainWindow, Ui_MainWindow):
         self.labelImg.setPixmap(self.nova_imagem)
         self.inputLargura.setText(str(self.nova_imagem.width()))
         self.inputAltura.setText(str(self.nova_imagem.height()))
+
+    def salvar(self):
+        imagem, _ = QFileDialog.getSaveFileName(self.centralwidget, 'Salvar Imagem',
+                                                'C:\\Users\\rozas\\OneDrive\\Imagens\\',
+                                                options=QFileDialog.DontUseNativeDialog)
+        self.nova_imagem.save(imagem, 'PNG')
 
 
 if __name__ == '__main__':
